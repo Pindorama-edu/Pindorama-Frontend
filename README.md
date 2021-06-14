@@ -5,7 +5,7 @@ License
 =================
 All Rights Reserved
 
-Copyright (c) 2021 Pindorama.edu
+Copyright © 2021 Pindorama.edu
 
 Created by Techcable
 
