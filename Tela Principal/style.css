@@ -194,11 +194,13 @@ button {
     padding: 6px 18px;
     background: #21d421;
     color: #000000;
+    margin: 0;
 }
 
 .botoes .log-verde button:hover {
     background: #1daf1d;
     color: #000000;
+    margin: 0;
 }
 
 .botoes ul {
@@ -210,6 +212,7 @@ button {
     cursor: pointer;
     font-weight: 700;
     border: none;
+    margin: 0;
 }
 
 .cad-preto button {
@@ -236,6 +239,7 @@ button {
         display: flex;
         flex-direction: row;
         text-align: center;
+        margin: 0;
     }
 }
 
@@ -408,14 +412,16 @@ footer .footerDisclaimer {
 footer .footerNote {
     margin-right: 3%;
     font-family: sans-serif;
+    margin: 0;
 }
 
 .rodape {
+    margin: 0;
     background: #323233;
-}
+}   
 
 .back1 {
-    background-image: url("unknown.png");
+    background-image: url("ADS_3.png");
 }
 
 .back2 {
