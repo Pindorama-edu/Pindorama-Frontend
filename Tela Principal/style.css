@@ -5,6 +5,10 @@ body {
     /* fallback for old browsers */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -418,7 +422,7 @@ footer .footerNote {
 .rodape {
     margin: 0;
     background: #323233;
-}   
+}
 
 .back1 {
     background-image: url("ADS_3.png");
@@ -433,7 +437,7 @@ footer .footerNote {
 }
 
 #mydiv {
-    height: 92vh;
+    height: 94vh;
     transition: background-image 1s;
     background-size: cover;
     cursor: default;
