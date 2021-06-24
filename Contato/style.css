@@ -13,7 +13,7 @@ body{
     margin-top: 50px;
 }
 .col-md-3{
-    background: #194f04;
+    background: linear-gradient(120deg,#29b965, #22a594);
     padding: 4%;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
