@@ -1,4 +1,5 @@
 function test() {
+    var guias = $(".guia");
     var tabsNewAnim = $('#navbarSupportedContent');
     var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
     var activeItemNewAnim = tabsNewAnim.find('.active');
@@ -15,7 +16,11 @@ function test() {
     $("#navbarSupportedContent").on("click", "li", function(e) {
         $('#navbarSupportedContent ul li').removeClass("active");
         $(this).addClass('active');
-        var test
+        for (var i = 0; i < guias.length; i++) {
+            guias[i].style.display = "none";
+        }
+        var active = $(this).attr("show");
+        document.getElementById(active).style.display = "block";
         var activeWidthNewAnimHeight = $(this).innerHeight();
         var activeWidthNewAnimWidth = $(this).innerWidth();
         var itemPosNewAnimTop = $(this).position();
