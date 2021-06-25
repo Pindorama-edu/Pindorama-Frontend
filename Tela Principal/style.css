@@ -440,6 +440,7 @@ footer .footerNote {
     height: 94vh;
     transition: background-image 1s;
     background-size: cover;
+    background-attachment: fixed;
     cursor: default;
 }
 
