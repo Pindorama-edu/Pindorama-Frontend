@@ -182,7 +182,7 @@ iframe {
 }
 
 .wrap-login100 {
-  width: 960px;
+  width: 100%;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -195,7 +195,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 177px 130px 33px 95px;
-  margin-top: 20px;
+  
 }
 
 /*------------------------------------------------------------------
@@ -546,4 +546,10 @@ color: #1f1d1f;
 a.navbar-brand.navbar-logo.navbar{
   margin-left: auto;
   margin-right: auto;
+}
+
+/*------------------------------------------------------*/
+
+input:required{
+  outline: transparent;
 }

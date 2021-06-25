@@ -5,6 +5,10 @@ body {
     /* fallback for old browsers */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -194,11 +198,13 @@ button {
     padding: 6px 18px;
     background: #21d421;
     color: #000000;
+    margin: 0;
 }
 
 .botoes .log-verde button:hover {
     background: #1daf1d;
     color: #000000;
+    margin: 0;
 }
 
 .botoes ul {
@@ -210,6 +216,7 @@ button {
     cursor: pointer;
     font-weight: 700;
     border: none;
+    margin: 0;
 }
 
 .cad-preto button {
@@ -236,6 +243,7 @@ button {
         display: flex;
         flex-direction: row;
         text-align: center;
+        margin: 0;
     }
 }
 
@@ -408,14 +416,16 @@ footer .footerDisclaimer {
 footer .footerNote {
     margin-right: 3%;
     font-family: sans-serif;
+    margin: 0;
 }
 
 .rodape {
+    margin: 0;
     background: #323233;
 }
 
 .back1 {
-    background-image: url("unknown.png");
+    background-image: url("ADS_3.png");
 }
 
 .back2 {
@@ -427,7 +437,7 @@ footer .footerNote {
 }
 
 #mydiv {
-    height: 92vh;
+    height: 94vh;
     transition: background-image 1s;
     background-size: cover;
     cursor: default;
@@ -440,9 +450,10 @@ footer .footerNote {
 .slogan {
     color: rgb(182, 194, 43);
     font-size: 30px;
-    font-weight: 900;
-    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-shadow: 2px 2px 5px black;
+   
 }
 
 .log-buttons {
