@@ -15,6 +15,7 @@ function test() {
     $("#navbarSupportedContent").on("click", "li", function(e) {
         $('#navbarSupportedContent ul li').removeClass("active");
         $(this).addClass('active');
+        var test
         var activeWidthNewAnimHeight = $(this).innerHeight();
         var activeWidthNewAnimWidth = $(this).innerWidth();
         var itemPosNewAnimTop = $(this).position();

@@ -1,0 +1,38 @@
+* {
+    color: black;
+}
+
+body {
+    background-color: white;
+    padding: 32px;
+}
+
+.d-flex {
+    display: flex;
+    overflow-x: auto;
+    background-color:rgba(0, 0, 0, .05);
+}
+
+.flex-column {
+    flex-flow: column nowrap;
+}
+
+.card {
+    border-radius: 10px;
+    min-width: 200px;
+    overflow: hidden;
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, .15);
+}
+
+.card .body {
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.card .footer {
+    background-color: rgb(165, 122, 42);
+    color: white;
+    text-align: center;
+    padding: 6px 12px;
+    text-decoration: none;
+}
