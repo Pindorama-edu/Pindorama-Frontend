@@ -87,3 +87,12 @@ function check_if_in_view() {
 
 $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
+
+var $mat = '[{"id":0,"nome":"Matemática","modulos":[{"id":0,"nome":"Áreas","Quantidade":12},{"id":1,"nome":"Volumes","Quantidade":30},{"id":2,"nome":"Matriz","Quantidade":14}]},{"id":1,"nome":"Português","modulos":[{"id":0,"nome":"Literatura","Quantidade":56},{"id":1,"nome":"Gramática","Quantidade":9}]},{"id":2,"nome":"Geografia","modulos":[{"id":0,"nome":"Revoluções","Quantidade":67},{"id":1,"nome":"Globalização","Quantidade":43}]},{"id":3,"nome":"Programação","modulos":[{"id":0,"nome":"Python","Quantidade":20},{"id":1,"nome":"Java","Quantidade":8}]}]';
+var $obj = jQuery.parseJSON($mat);
+$.each($obj, function(materia) {
+    $("#Materias").append("<h2>" + $obj[materia].nome + "</h2><div id=" + $obj[materia].nome + " class='d-flex' style='gap: 20px; padding: 10px'></div>");
+    $.each($obj[materia].modulos, function(modulo) {
+        $("#" + $obj[materia].nome + "").append("<div class='card d-flex flex-column'><div class='header'>" + $obj[materia].modulos[modulo].nome + "</div><div class='body'>Quantidade: " + $obj[materia].modulos[modulo].Quantidade + "</div><a class='footer' href='/materias/" + $obj[materia].id + "/modulos/" + $obj[materia].modulos[modulo].id + "'>Ver Módulos</a>");
+    });
+});

@@ -21,9 +21,18 @@
 }
 
 .card .footer {
-    background-color: rgb(165, 122, 42);
+    background-color: rgb(0, 0, 0);
     color: white;
     text-align: center;
     padding: 6px 12px;
     text-decoration: none;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.body {
+    background: linear-gradient(50deg, #32CD32, #228B22, #008000, #006400);
 }
