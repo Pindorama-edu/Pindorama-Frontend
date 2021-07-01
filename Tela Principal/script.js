@@ -1,143 +1,106 @@
-/*
-function test() {
-    var guias = $(".guia");
-    var tabsNewAnim = $('#navbarSupportedContent');
-    var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
-    var activeItemNewAnim = tabsNewAnim.find('.active');
-    var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
-    var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
-    var itemPosNewAnimTop = activeItemNewAnim.position();
-    var itemPosNewAnimLeft = activeItemNewAnim.position();
-    $(".hori-selector").css({
-        "top": itemPosNewAnimTop.top + "px",
-        "left": itemPosNewAnimLeft.left + "px",
-        "height": activeWidthNewAnimHeight + "px",
-        "width": activeWidthNewAnimWidth + "px"
-    });
-    $("#navbarSupportedContent").on("click", "li", function(e) {
-        $('#navbarSupportedContent ul li').removeClass("active");
-        $(this).addClass('active');
-        for (var i = 0; i < guias.length; i++) {
-            guias[i].style.display = "none";
-        }
-        var active = $(this).attr("show");
-        document.getElementById(active).style.display = "block";
-        var activeWidthNewAnimHeight = $(this).innerHeight();
-        var activeWidthNewAnimWidth = $(this).innerWidth();
-        var itemPosNewAnimTop = $(this).position();
-        var itemPosNewAnimLeft = $(this).position();
-        $(".hori-selector").css({
-            "top": itemPosNewAnimTop.top + "px",
-            "left": itemPosNewAnimLeft.left + "px",
-            "height": activeWidthNewAnimHeight + "px",
-            "width": activeWidthNewAnimWidth + "px"
-        });
-    });
-}
 $(document).ready(function() {
-    setTimeout(function() { test(); });
-});
-$(window).on('resize', function() {
-    setTimeout(function() { test(); }, 500);
-});
-$(".navbar-toggler").click(function() {
-    setTimeout(function() { test(); });
-});
 
-*/
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-teste();
-
-async function teste() {
-    var j = ["./Images/Computador.jpg", "./Images/Palmeiras.jpg"];
-    $("#mydiv").css("background-image", "url(j[i])");
-    for (var i = 0; i < j.length; i++) {
-        $("#mydiv").css("background-image", "url(" + j[i] + ")");
-        await sleep(3000);
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
+
     teste();
-}
 
-var $animation_elements = $('.animation-element');
-var $window = $(window);
-
-function check_if_in_view() {
-    var window_height = $window.height();
-    var window_top_position = $window.scrollTop();
-    var window_bottom_position = window_top_position + window_height;
-
-    $.each($animation_elements, function() {
-        var $element = $(this);
-        var element_height = $element.outerHeight();
-        var element_top_position = $element.offset().top;
-        var element_bottom_position = element_top_position + element_height;
-
-        //check to see if this current container is within viewport
-        if (element_bottom_position >= window_top_position &&
-            element_top_position <= window_bottom_position &&
-            $element.css("display") == "block") {
-            $element.addClass('in-view');
-        } else {
-            $element.removeClass('in-view');
+    async function teste() {
+        var j = ["./Images/Computador.jpg", "./Images/Palmeiras.jpg"];
+        $("#mydiv").css("background-image", "url(j[i])");
+        for (var i = 0; i < j.length; i++) {
+            $("#mydiv").css("background-image", "url(" + j[i] + ")");
+            await sleep(3000);
         }
+        teste();
+    }
+
+
+    var $animation_elements = $('.animation-element');
+    var $window = $(window);
+
+    function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($animation_elements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = element_top_position + element_height;
+
+            //check to see if this current container is within viewport
+            if (element_bottom_position >= window_top_position &&
+                element_top_position <= window_bottom_position &&
+                $element.css("display") == "block") {
+                $element.addClass('in-view');
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
+    }
+
+    $window.on('scroll resize', check_if_in_view);
+    $window.trigger('scroll');
+
+
+
+    $("#ham").click(function() {
+        $("#menu").addClass('click');
+        $("#screen").css("display", "block");
     });
-}
-
-$window.on('scroll resize', check_if_in_view);
-$window.trigger('scroll');
-
-var $mat = '[{"id":0,"nome":"Matemática","modulos":[{"id":0,"nome":"Áreas","Quantidade":12},{"id":1,"nome":"Volumes","Quantidade":30},{"id":2,"nome":"Matriz","Quantidade":14}]},{"id":1,"nome":"Português","modulos":[{"id":0,"nome":"Literatura","Quantidade":56},{"id":1,"nome":"Gramática","Quantidade":9}]},{"id":2,"nome":"Geografia","modulos":[{"id":0,"nome":"Revoluções","Quantidade":67},{"id":1,"nome":"Globalização","Quantidade":43}]},{"id":3,"nome":"Programação","modulos":[{"id":0,"nome":"Python","Quantidade":20},{"id":1,"nome":"Java","Quantidade":8}]}]';
-var $obj = jQuery.parseJSON($mat);
-$.each($obj, function(materia) {
-    $("#Materias").append("<h2>" + $obj[materia].nome + "</h2><div id=" + $obj[materia].nome + " class='d-flex' style='gap: 20px; padding: 10px'></div>");
-    $.each($obj[materia].modulos, function(modulo) {
-        $("#" + $obj[materia].nome + "").append("<div class='card d-flex flex-column'><div class='header'>" + $obj[materia].modulos[modulo].nome + "</div><div class='body'>Quantidade: " + $obj[materia].modulos[modulo].Quantidade + "</div><a class='footer' href='/materias/" + $obj[materia].id + "/modulos/" + $obj[materia].modulos[modulo].id + "'>Ver Módulos</a>");
+    $("#screen").click(function() {
+        $("#menu").removeClass('click');
+        $("#screen").css("display", "none");
     });
-});
-
-$("#ham").click(function() {
-    $("#menu").addClass('click');
-    $("#screen").css("display", "block");
-});
-$("#screen").click(function() {
-    $("#menu").removeClass('click');
-    $("#screen").css("display", "none");
-});
 
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-$("#cad").click(async function() {
-    $("#login").removeClass('in-view');
-    await sleep(300);
-    $("#login").css("display", "none");
-    $("#cadastro").css("display", "block");
-    $window.trigger("scroll");
-});
+    $("#cad").click(async function() {
+        $("#login").removeClass('in-view');
+        await sleep(300);
+        $("#login").css("display", "none");
+        $("#cadastro").css("display", "block");
+        $window.trigger("scroll");
+        console.log("oi");
+    });
 
-$("#voltar").click(async function() {
-    $("#cadastro").removeClass('in-view');
-    await sleep(300);
-    $("#cadastro").css("display", "none");
-    $("#login").css("display", "block");
-    $window.trigger("scroll");
-});
+    $("#voltar").click(async function() {
+        $("#cadastro").removeClass('in-view');
+        await sleep(300);
+        $("#cadastro").css("display", "none");
+        $("#login").css("display", "block");
+        $window.trigger("scroll");
+    });
 
-$("#esq").click(async function() {
-    $("#login").removeClass('in-view');
-    await sleep(300);
-    $("#login").css("display", "none");
-    $("#esqueci").css("display", "block");
-    $window.trigger("scroll");
-});
+    $("#esq").click(async function() {
+        $("#login").removeClass('in-view');
+        await sleep(300);
+        $("#login").css("display", "none");
+        $("#esqueci").css("display", "block");
+        $window.trigger("scroll");
+    });
 
-$("#voltare").click(async function() {
-    $("#esqueci").removeClass('in-view');
-    await sleep(300);
-    $("#esqueci").css("display", "none");
-    $("#login").css("display", "block");
-    $window.trigger("scroll");
+    $("#voltare").click(async function() {
+        $("#esqueci").removeClass('in-view');
+        await sleep(300);
+        $("#esqueci").css("display", "none");
+        $("#login").css("display", "block");
+        $window.trigger("scroll");
+    });
+
+    $(window).on('resize', function() {
+        if ($(window).width() < 1000) {
+            $('#logo').addClass('col-md-6');
+            $('#logo').removeClass('col-md-8');
+        } else {
+            $('#logo').addClass('col-md-8');
+            $('#logo').removeClass('col-md-6');
+        }
+    })
 });
