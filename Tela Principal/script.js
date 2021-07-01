@@ -1,3 +1,4 @@
+/*
 function test() {
     var guias = $(".guia");
     var tabsNewAnim = $('#navbarSupportedContent');
@@ -43,22 +44,22 @@ $(".navbar-toggler").click(function() {
     setTimeout(function() { test(); });
 });
 
+*/
 
-var back, back1;
-i = 0;
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 teste();
-setInterval(teste, 3000);
 
-function teste() {
-    i++;
-    if (i > 3) {
-        i = 1;
-        $("#mydiv").removeClass("back3");
+async function teste() {
+    var j = ["./Images/Computador.jpg", "./Images/Palmeiras.jpg"];
+    $("#mydiv").css("background-image", "url(j[i])");
+    for (var i = 0; i < j.length; i++) {
+        $("#mydiv").css("background-image", "url(" + j[i] + ")");
+        await sleep(3000);
     }
-    back = "back" + (i);
-    back1 = "back" + (i - 1);
-    $("#mydiv").addClass(back);
-    $("#mydiv").removeClass(back1);
+    teste();
 }
 
 var $animation_elements = $('.animation-element');
@@ -77,7 +78,8 @@ function check_if_in_view() {
 
         //check to see if this current container is within viewport
         if (element_bottom_position >= window_top_position &&
-            element_top_position <= window_bottom_position) {
+            element_top_position <= window_bottom_position &&
+            $element.css("display") == "block") {
             $element.addClass('in-view');
         } else {
             $element.removeClass('in-view');
@@ -95,4 +97,47 @@ $.each($obj, function(materia) {
     $.each($obj[materia].modulos, function(modulo) {
         $("#" + $obj[materia].nome + "").append("<div class='card d-flex flex-column'><div class='header'>" + $obj[materia].modulos[modulo].nome + "</div><div class='body'>Quantidade: " + $obj[materia].modulos[modulo].Quantidade + "</div><a class='footer' href='/materias/" + $obj[materia].id + "/modulos/" + $obj[materia].modulos[modulo].id + "'>Ver Módulos</a>");
     });
+});
+
+$("#ham").click(function() {
+    $("#menu").addClass('click');
+    $("#screen").css("display", "block");
+});
+$("#screen").click(function() {
+    $("#menu").removeClass('click');
+    $("#screen").css("display", "none");
+});
+
+
+
+$("#cad").click(async function() {
+    $("#login").removeClass('in-view');
+    await sleep(300);
+    $("#login").css("display", "none");
+    $("#cadastro").css("display", "block");
+    $window.trigger("scroll");
+});
+
+$("#voltar").click(async function() {
+    $("#cadastro").removeClass('in-view');
+    await sleep(300);
+    $("#cadastro").css("display", "none");
+    $("#login").css("display", "block");
+    $window.trigger("scroll");
+});
+
+$("#esq").click(async function() {
+    $("#login").removeClass('in-view');
+    await sleep(300);
+    $("#login").css("display", "none");
+    $("#esqueci").css("display", "block");
+    $window.trigger("scroll");
+});
+
+$("#voltare").click(async function() {
+    $("#esqueci").removeClass('in-view');
+    await sleep(300);
+    $("#esqueci").css("display", "none");
+    $("#login").css("display", "block");
+    $window.trigger("scroll");
 });

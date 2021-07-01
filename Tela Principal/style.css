@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
+    width: 100vw;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
     background: #fff;
-    /* fallback for old browsers */
+    overflow: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
 }
 
 * {
@@ -424,28 +428,18 @@ footer .footerNote {
     background: #323233;
 }
 
-.back1 {
-    background-image: url("Computador.png");
-}
-
-.back2 {
-    background-image: url("Palmeiras.jpg");
-}
-
-.back3 {
-    background-image: url("1534847_505055216274134_871610657_o.jpg");
-}
-
 #mydiv {
-    height: 94vh;
+    height: 100vh;
+    width: 100vw;
     transition: background-image 1s;
     background-size: cover;
-    background-attachment: fixed;
     cursor: default;
+    position: absolute;
+    z-index: -999;
 }
 
 .mydivback {
-    background-color: rgba(27, 67, 50, 0.8);
+    background-color: rgba(5, 31, 12, 0.9);
 }
 
 .slogan {
@@ -454,6 +448,7 @@ footer .footerNote {
     font-weight: 700;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-shadow: 2px 2px 5px black;
+    text-align: center;
 }
 
 .log-buttons {
@@ -509,23 +504,23 @@ footer .footerNote {
 
 .animation-element.slide-left {
     opacity: 0;
-    -moz-transition: all 500ms linear;
-    -webkit-transition: all 500ms linear;
-    -o-transition: all 500ms linear;
-    transition: all 500ms linear;
-    -moz-transform: translate3d(-100px, 0px, 0px);
-    -webkit-transform: translate3d(-100px, 0px, 0px);
-    -o-transform: translate(-100px, 0px);
-    -ms-transform: translate(-100px, 0px);
-    transform: translate3d(-100px, 0px, 0px);
+    -moz-transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
+    -moz-transform: translate3d(-50px, 0px, 0px);
+    -webkit-transform: translate3d(-50px, 0px, 0px);
+    -o-transform: translate(-50px, 0px);
+    -ms-transform: translate(-50px, 0px);
+    transform: translate3d(-50px, 0px, 0px);
 }
 
 .animation-element.slide-right {
     opacity: 0;
-    -moz-transition: all 500ms linear;
-    -webkit-transition: all 500ms linear;
-    -o-transition: all 500ms linear;
-    transition: all 500ms linear;
+    -moz-transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
     -moz-transform: translate3d(100px, 0px, 0px);
     -webkit-transform: translate3d(100px, 0px, 0px);
     -o-transform: translate(100px, 0px);
@@ -571,4 +566,95 @@ footer .footerNote {
     -o-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     transform: translate3d(0px, 0px, 0px);
+}
+
+.login-sc {
+    height: 100%;
+    background-color: rgb(200, 200, 200);
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+
+.menu-lateral {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(5, 31, 12);
+    z-index: 2;
+}
+
+.menu-lateral.show-left {
+    -moz-transition: all 50ms linear;
+    -webkit-transition: all 50ms linear;
+    -o-transition: all 50ms linear;
+    transition: all 50ms linear;
+    -moz-transform: translate3d(-300px, 0px, 0px);
+    -webkit-transform: translate3d(300px, 0px, 0px);
+    -o-transform: translate(-300px, 0px);
+    -ms-transform: translate(-300px, 0px);
+    transform: translate3d(-300px, 0px, 0px);
+}
+
+.menu-lateral.show-left.click {
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ham:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ham {
+    cursor: pointer;
+    transition: all 0.5s;
+    object-fit: cover;
+    border: 1px;
+    border-radius: 30px;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.menu-exit {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-a {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100vw;
+        padding: 0;
+    }
+    body {}
+    .nav-a {
+        position: relative;
+        width: 100vw;
+        background: rgb(87, 184, 70);
+        box-shadow: 0px 4px 20px;
+        z-index: 1;
+    }
+    .slogan-sc {
+        display: none;
+    }
+    #mydiv {
+        display: none;
+    }
+    .login-sc {
+        box-shadow: none;
+    }
 }
