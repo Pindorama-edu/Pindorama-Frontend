@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pindorama</title>
+    <link rel="stylesheet" href="cad2.css">
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-mainbg">
+            <!-- Logo -->
+            <a class="navbar-brand navbar-logo navbar" href="../Tela Principal/Index.html">Pindorama.edu</a>
+
+    </main>
+
+    <div class="form">
+        <h1>Cadastro</h1>
+        <form method="POST">
+            <div class="left_size">
+                <input class="input100r " type="text" placeholder="Usuario" required>
+                <input class="input100r" type="email" placeholder="Email" required>
+                <input class="input100r" type="password" placeholder="Senha" required>
+                <input class="input100r" type="text" placeholder="Nacionalidade" required>
+            </div>
+
+            <div class="right_size">
+                <select class="option100" name="sexo" id="genero" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Não defenido">Não definido...</option>
+                </select>
+         
+                <label class="label_date"> Data de Nascimento</label>
+                <input class="input100_date" type="date" required> 
+                <input class="home" type="button" value="Home"> 
+                <input class="button" type="submit" value="Enviar">
+                <div>
+                    <input class="check" type="checkbox" required>
+                    <label class="custom-control-label termsText" for="agree">Compreendo e aceito os <strong><a class="linkpp" href="#"> Termos e Condições</a></strong> do <a class="linkpp" href="/Tela Principal/Index.html">Pindorama.edu </a></label>
+                </div>
+                
+            </div>
+          
+        </form>
+
+    </div>
+</body>
+</html>
