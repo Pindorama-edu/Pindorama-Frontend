@@ -15,544 +15,249 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Style.css -->
-    
+
 
     <script type=" text/javascript " src="https://www.amcharts.com/lib/3/amcharts.js "></script>
     <script type="text/javascript " src="https://www.amcharts.com/lib/3/serial.js "></script>
     <!--Perfil-->
-   
 
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="materias.css">
 </head>
 
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-mainbg">
-        <!-- Logo -->
-        <a class="navbar-brand navbar-logo" href="#">
-            <img style="width:25px;height:30px" src="./pindorama_logo.png" alt=""> Pindorama
-        </a>
-        <!-- Collapse Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars text-white"></i>
-        </button>
-        <!-- Links -->
-        <div class="collapse navbar-collapse pl-4" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <!-- For Styling -->
-                <div class="hori-selector">
-                    <div class="left"></div>
-                    <div class="right"></div>
-                </div>
-                <!-- Nav Links -->
-                <li class="nav-item active" show="Inicio">
-                    <a class="nav-link" href="#Dashboard">
-                        <i class="fas fa-home"></i>Início
-                    </a>
-                </li>
-                <li class="nav-item" show="Sobre">
-                    <a class="nav-link" href="#">
-                        <i class="far fa-address-book"></i>Sobre
-                    </a>
-                </li>
-                <li class="nav-item" show="Materias">
-                    <a class="nav-link" href="#Materias">
-                        <i class="far fa-clone"></i>Matérias
-                    </a>
-                </li>
-<<<<<<< HEAD
-                <li class="nav-item" show="Graficos">
-                    <a class="nav-link" href="#Gradicos">
-                        <i class="fas fa-chart-pie"></i>Gráficos
-                    </a>
-                </li>
-=======
->>>>>>> 49b2f48338458e79f1c46daee5d75a300c34cdd4
+    <div class="nav-a">
+        <img src="Hamburger_icon.svg.png" width="50" height="50" alt="" class="ham" id="ham">
+    </div>
 
-                <li class="nav-item" show="Perfil">
-                    <a class="nav-link" href="#Perfil">
-                        <i class="fas fa-user-edit"></i>Perfil 
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="row pr-4 cad" style="margin: 0;">
-
-            <div class="col row">
-                <a href="#" class="col align-self-center text-white botoes">Cadastrar</a>
-            </div>
-
-            <div class="botoes col btn btn-success botoes">
-                <a href="../Login/logue.html" type="href" class="text-white">Login</a>
-            </div>
+    <div class="menu-lateral show-left" id="menu">
+        <div class="d-flex flex-column">
 
         </div>
-    </nav>
+    </div>
+    <div class="w-100 h-100 menu-exit" id="screen" style="display:none"></div>
+    <!--Tela de matérias-->
+    <div class="bodyMaterias">
+        <div class="titulo">
+            <strong class="nomeMateria">
+                <header>
+                    <h1>Matérias</h1>
+                </header>
+                <div class="iconeMaterias d-flex">
+                    Tecnologia
 
-    <section class="guia" id="Inicio">
-        <div class="pindorama border-bottom border-dark">
-            <div id="mydiv">
-
-                <div class="mydivback w-100 h-100">
-                    <div class="row align-items-center w-100 h-100 m-0 justify-content-center">
-
-                        <div class="col-6 animation-element slide-bottom">
-                            <img src="./pindorama_img.png" alt="Logo Pindorama" class="img-fluid">
-                            <div class="slogan">Conhecimento de todo Brasil<br>reunido em um só portal</div>
-
-                        </div>
-                        <div class="mouse">
-                            <a href="#info">
-                                <img src="Mouse_icon.png" alt="Ícone de mouse">
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-
-            <!--Quadros -->
-
-            <div class="jumbotron row justify-content-center" id="info">
-                <div class="col-3 text-right animation-element slide-left my-auto">
-                    <p>O que é o Pindorama?</p>
-                </div>
-                <div style="border: 1px solid rgb(100, 100, 100); border-radius: 3px;width:1px"></div>
-                <div class="col-5 animation-element slide-right">
-                    O Pindorama é um portal educacional com o objetivo de disponibilizar <b>gratuitamente</b> todo o
-                    tipo de conhecimento para o seu aprimoramento tanto como aluno quanto como profissional.
-                    <br>
-                    <br> Estaremos disponibilizando vários tipos de materiais, como videoaulas, conteúdo em PDFs,
-                    ferramentas para acompanhar seu progresso, entre outros.
-                    <br>
-                    <br>
-                </div>
-            </div>
-
-    </section>
-    <!--Tela de Máterias-->
-    <section class="guia" id="Materias" style="display: none;">
-
-    </section>
-    <section class="guia" id="Sobre" style="display: none;">
-        <div class="jumbotron">
-            <h1>Sobre o Pindorama</h1><br>
-            <div>O projeto surgiu sob a ideia de...</div>
-
+            </strong>
         </div>
-        
-    <script src="../Tela Principal/script.js"></script>
-		<!-- amCharts javascript code -->
-		<script type="text/javascript">
-			AmCharts.makeChart("chartdiv",
-				{
-					"type": "serial",
-					"categoryField": "category",
-                    "color": "black",
-					"columnSpacing3D": 10,
-					"maxSelectedSeries": 13,
-					"angle": 30,
-					"depth3D": 25,
-					"plotAreaFillColors": "#974E4E",
-					"zoomOutButtonPadding": 12,
-					"startDuration": 1,
-					"startEffect": "easeOutSine",
-					"creditsPosition": "bottom-right",
-					"categoryAxis": {
-						"gridPosition": "start"
-					},
-					"trendLines": [],
-					"graphs": [
-						{
-							"balloonText": "[[title]] em [[category]]:[[value]]",
-							"fillAlphas": 1,
-							"id": "AmGraph-1",
-							"title": "Nota",
-							"type": "column",
-							"valueField": "column-1"
-						}
-					],
-					"guides": [],
-					"valueAxes": [
-						{
-							"id": "ValueAxis-1",
-							"title": "Nota média"
-						}
-					],
-					"allLabels": [],
-					"balloon": {},
-					"titles": [
-						{
-							"id": "Title-1",
-							"size": 15,
-							"text": "Nota média do enem ao longo de 10 anos"
-						}
-					],
-					"dataProvider": [
-						{
-							"category": "2011",
-							"column-1": "494.6"
-						},
-						{
-							"category": "2012",
-							"column-1": "584.2"
-						},
-						{
-							"category": "2013",
-							"column-1": "590.0"
-						},
-						{
-							"category": "2014",
-							"column-1": "588.8"
-						},
-						{
-							"category": "2015",
-							"column-1": "510.6"
-						},
-						{
-							"category": "2016",
-							"column-1": "505.8"
-						},
-						{
-							"category": "2017",
-							"column-1": "558.0"
-						},
-						{
-							"category": "2018",
-							"column-1": "526.9"
-						},
-						{
-							"category": "2019",
-							"column-1": "520.9"
-						},
-						{
-							"category": "2020",
-							"column-1": "516.2"
-						}
-					]
-				}
-			);
-		</script>
-		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
-        <h1 class="text-center">Conheça a nossa equipe!!</h1>
-        <div class="container">
-            <div class="row">
+        <div class="d-flex" style="gap: 20px; padding: 10px">
+            <a class="modlink1 card d-flex flex-column justify-content-between" href="#Quimica">
+                <span class="card d-flex flex-column justify-content-between">
 
-                <!--team-1-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
 
-                        <div class="team-front">
-                            <img src="./12657785_871747309604921_762161975317381357_o.jpg" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>Espreitador de Casadas</p>
-                        </div>
+                    </span>
+                    <span class="footer1" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+            <a class="modlink1 card d-flex flex-column justify-content-between" href="#">
+                <span class="card d-flex flex-column justify-content-between">
 
-                        <div class="team-back">
-                            <span>
-                                Se virem este homem em seu casamento chame a polícia e protejam suas esposas
-                            </span>
-                        </div>
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
 
-                    </div>
-                </div>
-                <!--team-1-->
-
-                <!--team-2-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="./18301974_1247683468677968_3494002261490030278_n.jpg" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>O Lariqueiro</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                Gustavo com larica provando que não come apenas casadas
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--team-2-->
-
-                <!--team-3-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="./ComLinceca.png" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>O Playboy</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                "Com licença, mas os senhores poderiam remover as minhas fotos?"
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--team-3-->
-
-                <!--team-4-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="Gustavo_noia.png" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>O Noia</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                -O que você fumou, filho?
-                                -Não mãe.
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--team-4-->
-
-                <!--team-5-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="zellll.png" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>O Domador de zebras de 5 pernas</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                O único homem capaz de domar a quinta perna de uma zebra
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--team-5-->
-
-                <!--team-6-->
-                <div class="col-lg-4">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="./img_7549_felino_aJjLrq4.png" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>A Onça</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                Miaauuu uarrrrrr
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--team-6-->
-                <div class="col-lg-4 mx-auto">
-                    <div class="our-team-main">
-
-                        <div class="team-front">
-                            <img src="./1534847_505055216274134_871610657_o.jpg" class="img-fluid" />
-                            <h3>Gustavo</h3>
-                            <p>O Abatedor</p>
-                        </div>
-
-                        <div class="team-back">
-                            <span>
-                                Gosta de comer bolo, pizza e arroz. e buceta
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+                    </span>
+                    <span class="footer1" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
         </div>
-    </section>
-        <section id="Perfil" class="guia" style="display: none;">
-            <div class="container emp-profile">
-                <form method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-img">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                                    alt="" />
-                                <div class="file btn btn-lg btn-primary">
-                                    Change Photo
-                                    <input type="file" name="file" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-head">
-                                <h5>
-                                    Kshiti Ghelani
-                                </h5>
-                                <h6>
-                                    Web Developer and Designer
-                                </h6>
-                                <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                            role="tab" aria-controls="home" aria-selected="true">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                            role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-work">
-                                <p>WORK LINK</p>
-                                <a href="">Website Link</a><br />
-                                <a href="">Bootsnipp Profile</a><br />
-                                <a href="">Bootply Profile</a>
-                                <p>SKILLS</p>
-                                <a href="">Web Designer</a><br />
-                                <a href="">Web Developer</a><br />
-                                <a href="">WordPress</a><br />
-                                <a href="">WooCommerce</a><br />
-                                <a href="">PHP, .Net</a><br />
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="tab-content profile-tab" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                    aria-labelledby="home-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>User Id</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Kshiti123</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Name</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Kshiti Ghelani</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>kshitighelani@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Phone</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>123 456 7890</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Profession</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Web Developer and Designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Experience</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Hourly Rate</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>10$/hr</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Total Projects</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>230</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>English Level</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Availability</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>6 months</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label>Your Bio</label><br />
-                                            <p>Your detail description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </section>
+        <!--Segunda tela de matérias-->
+        <div class="titulo">
+            <strong class="nomeMateria">
+                <div class="iconeMaterias2 d-flex">
+                    Ciências da Natureza
 
-    <footer>
-        <div class="rodape row justify-content-between p-4">
-
-            <hr>
-            <div class="footerDisclaimer col text-light p-2">Copyright © 2021 - <span>Pindorama.edu</span></div>
-            <div class="footerNote col text-light text-right p-2">Email: <span>pindorama.edu@outlook.com</span></div>
+                </div>
+            </strong>
         </div>
-    </footer>
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
-    <!--Perfil-->
-   
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+
+        <div class="d-flex" style="gap: 20px; padding: 10px">
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#Quimica">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+        </div>
+        <!--Terceira tela de materias-->
+        <div class="titulo">
+            <strong class="nomeMateria">
+                <div class="iconeMaterias3 d-flex">
+                    Ciências humanas
+                </div>
+            </strong>
+        </div>
+        <div class="d-flex" style="gap: 20px; padding: 10px">
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#Quimica">
+                <span class="card d-flex flex-column justify-content-between">
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#">
+                <span class="card d-flex flex-column justify-content-between">
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+        </div>
+        <!--Quarta tela de materias-->
+        <div class="titulo">
+            <strong class="nomeMateria">
+                <div class="iconeMaterias4 d-flex">
+                    Linguagens
+                </div>
+            </strong>
+        </div>
+
+        <div class="d-flex" style="gap: 20px; padding: 10px">
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#Quimica">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="titulo">
+            <strong class="nomeMateria">
+                <div class="iconeMaterias5 d-flex">
+                    Matemática
+                </div>
+            </strong>
+        </div>
+
+        <div class="d-flex" style="gap: 20px; padding: 10px">
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#Quimica">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+            <a class="modlink2 card d-flex flex-column justify-content-between" href="#">
+                <span class="card d-flex flex-column justify-content-between">
+
+                    <span class="body">
+                        Body
+                    </span>
+                    <span class="modulosQuimica">
+                        <p>24 módulos</p>
+
+                    </span>
+                    <span class="footer2" href="/materias/1/modulos">
+                        Ver Módulos
+                    </span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+    <!--JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
+        crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns "
+        crossorigin="anonymous "></script>
+    <script src="materias.js"></script>
 </body>
+
 
 </html>

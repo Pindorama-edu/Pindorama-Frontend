@@ -1,12 +1,86 @@
+* {
+    margin: 0; /*css do Menu*/ 
+    padding: 0;
+  }
+.menu-lateral {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(5, 31, 12);
+    z-index: 10;
+    top: 0;
+}
+
+.menu-lateral.show-left {
+    -moz-transition: all 50ms linear;
+    -webkit-transition: all 50ms linear;
+    -o-transition: all 50ms linear;
+    transition: all 50ms linear;
+    -moz-transform: translate3d(-300px, 0px, 0px);
+    -webkit-transform: translate3d(300px, 0px, 0px);
+    -o-transform: translate(-300px, 0px);
+    -ms-transform: translate(-300px, 0px);
+    transform: translate3d(-300px, 0px, 0px);
+    z-index: 10;
+}
+
+.menu-lateral.show-left.click {
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.ham:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ham {
+    cursor: pointer;
+    transition: all 0.5s;
+    object-fit: cover;
+    border: 1px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.menu-exit {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+}
+
+.nav-a {
+   position: relative;
+        width: 100vw;
+        background: rgb(87, 184, 70);
+        box-shadow: 0px 4px 20px;
+        z-index: 1;
+}
 .d-flex {
     display: flex;
     overflow-x: auto;
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .flex-column {
     flex-flow: column nowrap;
 }
+.bodyMaterias{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+ 
 
 .card {
     border-radius: 10px;
@@ -15,16 +89,14 @@
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, .15);
 }
 
-.card .body {
+.card  {
     min-width: 200px;
-    min-height: 100px;
+    height: 110px;
 }
 
-.card .footer {
-    background-color: rgb(0, 0, 0);
+.card {
     color: white;
     text-align: center;
-    padding: 6px 12px;
     text-decoration: none;
 }
 
@@ -32,7 +104,246 @@
     background-color: rgb(0, 0, 0);
     color: white;
 }
+.titulo{
+    display: flex;
+    margin-bottom: 8px;
+}
+.nomeMaterias{
+    padding-left: 8px;
+    color: rgb(80, 84, 98);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    font-family: Nunito, sans-serif;
+}
+header{
+    color: rgb(37, 39, 45);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Nunito, sans-serif;
+}
+.iconeMaterias:before{
+    content: "";
+    background-color: rgb(255, 114, 114);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.iconeMaterias2:before{
+    content: "";
+    background-color: rgb(250, 226, 120);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.iconeMaterias3:before{
+    content: "";
+    background-color: rgb(112, 193, 179);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.iconeMaterias3:before{
+    content: "";
+    background-color: rgb(0, 62, 197);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.iconeMaterias4:before{
+    content: "";
+    background-color: rgb(243, 0, 223);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.iconeMaterias5:before{
+    content: "";
+    background-color: rgb(30, 255, 0);
+    width: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
 
-.body {
-    background: linear-gradient(50deg, #32CD32, #228B22, #008000, #006400);
+.body{
+    color: rgb(37, 39, 45);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 16px 16px 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 768px) { 
+        [class="col-"] {
+        width: 100vw;
+        padding: 0;
+    }
+    body {
+        overflow: visible;
+        background-color: rgb(170, 170, 170);
+    }
+    .nav-a {
+        top: 0;
+        width: 100%;
+        position: relative;
+        width: 100vw;
+        background: rgb(87, 184, 70);
+        box-shadow: 0px 4px 20px;
+        z-index: 1;
+    }
+    .slogan-sc {
+        display: none;
+    }
+    #mydiv {
+        display: none;
+    }
+    .login-sc {
+        box-shadow: none;
+        border-radius: 0;
+        background-color: rgb(170, 170, 170);
+    }
+    .logo-resp {
+        background-color: 0;
+        display: block!important;
+        background-color: rgba(0, 0, 0, .0)!important;
+    }
+    .login {
+        width: 100vw;
+    }
+    .mydivback {
+        height: auto;
+        width: auto;
+    }
+    .menu-lateral {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: 100%;
+        background-color: rgb(5, 31, 12);
+        z-index: 2;
+    }
+    .menu-lateral.show-left {
+        -moz-transition: all 50ms linear;
+        -webkit-transition: all 50ms linear;
+        -o-transition: all 50ms linear;
+        transition: all 50ms linear;
+        -moz-transform: translate3d(-50vw, 0px, 0px);
+        -webkit-transform: translate3d(-50vw, 0px, 0px);
+        -o-transform: translate(-50vw, 0px);
+        -ms-transform: translate(-50vw, 0px);
+        transform: translate3d(-50vw, 0px, 0px);
+    }
+    .menu-lateral.show-left.click {
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+    }
+    .ham:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .ham {
+        display: block;
+        cursor: pointer;
+        transition: all 0.5s;
+        object-fit: cover;
+        border: 1px;
+        border-radius: 30px;
+        max-width: 100%;
+        height: auto;
+        padding: 10px;
+        margin: 0;
+    }
+    .menu-exit {
+        display: block;
+        top: 0;
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.modulosQuimica{
+        font-size: 12px;
+        margin: 0px 16px;
+        color: rgb(58, 62, 71);
+        font-weight: bold;
+        font-family: Nunito, sans-serif;
+        z-index: 2;
+}
+.modlink1{
+    background: rgb(112, 193, 179);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    width: 172px;
+}
+.modlink2{
+    background: rgb(250, 226, 120);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    width: 172px;
+    border-radius: 10px;
+}
+.modlink3{
+
+}
+.modlink4{
+    
+}
+.modlink1:hover{
+    text-decoration: none;
+}
+.modlink2:hover{
+    text-decoration: none;
+}
+.footer1{
+    color: rgb(255, 255, 255);
+    line-height: 16px;
+    font-size: 12px;
+    background: rgb(65, 118, 106);
+    text-align: center;
+    border-radius: 0px 0px 4px 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    height: 16px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+}
+.footer2{
+    color: rgb(255, 255, 255);
+    line-height: 16px;
+    font-size: 12px;
+    background: rgb(153, 133, 69);
+    text-align: center;
+    border-radius: 0px 0px 4px 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    height: 16px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    display: flex;
 }
