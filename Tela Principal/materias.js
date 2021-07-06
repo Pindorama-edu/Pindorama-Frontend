@@ -1,8 +1,8 @@
 $("#ham").click(function() {
-    $("#menu").addClass('click');
-    $("#screen").css("display", "block");
-});
-$("#screen").click(function() {
-    $("#menu").removeClass('click');
-    $("#screen").css("display", "none");
+    if ($("#menu").css("display") == "block") {
+        $("#menu").css("display", "none");
+    } else {
+        $("#menu").css("display", "block");
+    }
+
 });

@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    if (typeof params.id !== 'undefined') {
+        $("#" + params.id).addClass('in-view');
+        $("#" + params.id).css('display', "block");
+        $("#login").css('display', "none");
+    }
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));

@@ -1,15 +1,12 @@
 * {
-    margin: 0; /*css do Menu*/ 
+    margin: 0;
+    /*css do Menu*/
     padding: 0;
-  }
+}
+
 .menu-lateral {
-    position: absolute;
-    left: 0;
-    width: 300px;
     height: 100%;
     background-color: rgb(5, 31, 12);
-    z-index: 10;
-    top: 0;
 }
 
 .menu-lateral.show-left {
@@ -59,12 +56,14 @@
 }
 
 .nav-a {
-   position: relative;
-        width: 100vw;
-        background: rgb(87, 184, 70);
-        box-shadow: 0px 4px 20px;
-        z-index: 1;
+    position: relative;
+    width: 100vw;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    margin-bottom: 25px;
 }
+
 .d-flex {
     display: flex;
     overflow-x: auto;
@@ -74,22 +73,23 @@
 .flex-column {
     flex-flow: column nowrap;
 }
-.bodyMaterias{
+
+.bodyMaterias {
     margin-right: auto;
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
 }
- 
 
 .card {
+    border: 0!important;
     border-radius: 10px;
     min-width: 200px;
     overflow: hidden;
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, .15);
 }
 
-.card  {
+.card {
     min-width: 200px;
     height: 110px;
 }
@@ -104,11 +104,13 @@
     background-color: rgb(0, 0, 0);
     color: white;
 }
-.titulo{
+
+.titulo {
     display: flex;
     margin-bottom: 8px;
 }
-.nomeMaterias{
+
+.nomeMaterias {
     padding-left: 8px;
     color: rgb(80, 84, 98);
     font-size: 18px;
@@ -116,48 +118,55 @@
     line-height: 26px;
     font-family: Nunito, sans-serif;
 }
-header{
+
+header {
     color: rgb(37, 39, 45);
     font-weight: bold;
     font-size: 24px;
     font-family: Nunito, sans-serif;
 }
-.iconeMaterias:before{
+
+.iconeMaterias:before {
     content: "";
     background-color: rgb(255, 114, 114);
     width: 4px;
     border-radius: 4px;
     margin-right: 20px;
 }
-.iconeMaterias2:before{
+
+.iconeMaterias2:before {
     content: "";
     background-color: rgb(250, 226, 120);
     width: 4px;
     border-radius: 4px;
     margin-right: 20px;
 }
-.iconeMaterias3:before{
+
+.iconeMaterias3:before {
     content: "";
     background-color: rgb(112, 193, 179);
     width: 4px;
     border-radius: 4px;
     margin-right: 20px;
 }
-.iconeMaterias3:before{
+
+.iconeMaterias3:before {
     content: "";
     background-color: rgb(0, 62, 197);
     width: 4px;
     border-radius: 4px;
     margin-right: 20px;
 }
-.iconeMaterias4:before{
+
+.iconeMaterias4:before {
     content: "";
     background-color: rgb(243, 0, 223);
     width: 4px;
     border-radius: 4px;
     margin-right: 20px;
 }
-.iconeMaterias5:before{
+
+.iconeMaterias5:before {
     content: "";
     background-color: rgb(30, 255, 0);
     width: 4px;
@@ -165,7 +174,7 @@ header{
     margin-right: 20px;
 }
 
-.body{
+.body {
     color: rgb(37, 39, 45);
     font-size: 16px;
     font-weight: 600;
@@ -177,8 +186,12 @@ header{
     z-index: 2;
 }
 
-@media only screen and (max-width: 768px) { 
-        [class="col-"] {
+.con {
+    padding: 0!important;
+}
+
+@media only screen and (max-width: 768px) {
+    [class="col-"] {
         width: 100vw;
         padding: 0;
     }
@@ -219,13 +232,8 @@ header{
         width: auto;
     }
     .menu-lateral {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50vw;
         height: 100%;
         background-color: rgb(5, 31, 12);
-        z-index: 2;
     }
     .menu-lateral.show-left {
         -moz-transition: all 50ms linear;
@@ -270,24 +278,25 @@ header{
     }
 }
 
-.modulosQuimica{
-        font-size: 12px;
-        margin: 0px 16px;
-        color: rgb(58, 62, 71);
-        font-weight: bold;
-        font-family: Nunito, sans-serif;
-        z-index: 2;
+.modulosQuimica {
+    font-size: 12px;
+    margin: 0px 16px;
+    color: rgb(58, 62, 71);
+    font-weight: bold;
+    font-family: Nunito, sans-serif;
+    z-index: 2;
 }
-.modlink1{
+
+.modlink1 {
     background: rgb(112, 193, 179);
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
     width: 172px;
 }
-.modlink2{
+
+.modlink2 {
     background: rgb(250, 226, 120);
     border-radius: 4px;
     display: flex;
@@ -297,19 +306,20 @@ header{
     width: 172px;
     border-radius: 10px;
 }
-.modlink3{
 
-}
-.modlink4{
-    
-}
-.modlink1:hover{
+.modlink3 {}
+
+.modlink4 {}
+
+.modlink1:hover {
     text-decoration: none;
 }
-.modlink2:hover{
+
+.modlink2:hover {
     text-decoration: none;
 }
-.footer1{
+
+.footer1 {
     color: rgb(255, 255, 255);
     line-height: 16px;
     font-size: 12px;
@@ -328,7 +338,8 @@ header{
     width: 100%;
     display: flex;
 }
-.footer2{
+
+.footer2 {
     color: rgb(255, 255, 255);
     line-height: 16px;
     font-size: 12px;
