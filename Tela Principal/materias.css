@@ -2,66 +2,187 @@
     margin: 0;
     /*css do Menu*/
 }
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
-.menu-lateral {
-    height: 100%;
-    background-color: rgb(5, 31, 12);
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
 }
 
-.menu-lateral.show-left {
-    -moz-transition: all 50ms linear;
-    -webkit-transition: all 50ms linear;
-    -o-transition: all 50ms linear;
-    transition: all 50ms linear;
-    -moz-transform: translate3d(-300px, 0px, 0px);
-    -webkit-transform: translate3d(300px, 0px, 0px);
-    -o-transform: translate(-300px, 0px);
-    -ms-transform: translate(-300px, 0px);
-    transform: translate3d(-300px, 0px, 0px);
-    z-index: 10;
+*,
+::before,
+::after {
+    box-sizing: border-box
 }
 
-.menu-lateral.show-left.click {
-    -moz-transform: translate3d(0px, 0px, 0px);
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    -o-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-    transform: translate3d(0px, 0px, 0px);
-    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-}
-
-.ham:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.ham {
-    cursor: pointer;
-    transition: all 0.5s;
-    object-fit: cover;
-    border: 1px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 30px;
-    padding: 10px;
-    margin: 5px;
-}
-
-.menu-exit {
-    position: absolute;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-}
-
-.nav-a {
+.body-pd {
     position: relative;
-    width: 100vw;
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    margin-bottom: 25px;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
 }
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: black;
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+.nav_logo {
+    margin-bottom: 2rem
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color)
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+}
+
 
 .d-flex {
     display: flex;
@@ -74,8 +195,6 @@
 }
 
 .bodyMaterias {
-    margin-right: auto;
-    margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
 }
@@ -99,10 +218,7 @@
     text-decoration: none;
 }
 
-.header {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
+
 
 .titulo {
     display: flex;
@@ -125,6 +241,26 @@ header {
     font-family: Nunito, sans-serif;
 }
 
+
+
+.body {
+    color: rgb(37, 39, 45);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 16px 16px 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 2;
+    height:100%;
+}
+
+.con {
+    padding: 0!important;
+}
+
+/*-------------- MODULOS E MATEIAS-------------*/
 .iconeMaterias:before {
     content: "";
     background-color: rgb(255, 114, 114);
@@ -164,119 +300,6 @@ header {
     border-radius: 4px;
     margin-right: 20px;
 }
-
-.body {
-    color: rgb(37, 39, 45);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
-    overflow: hidden;
-    padding: 16px 16px 0px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    z-index: 2;
-    height:100%;
-}
-
-.con {
-    padding: 0!important;
-}
-
-@media only screen and (max-width: 768px) {
-    [class="col-"] {
-        width: 100%;
-        padding: 0;
-        background-color: rgb(255, 255, 255);
-        height: 100%;
-        position: relative;
-    }
-    body {
-        overflow: visible;
-        background-color: rgb(170, 170, 170);
-    }
-    .nav-a {
-        top: 0;
-        width: 150%;
-        position: relative;
-        
-        background: rgb(255, 255, 255);
-        box-shadow: 0px 4px 20px;
-        z-index: 1;
-    }
-    .slogan-sc {
-        display: none;
-    }
-    #mydiv {
-        display: none;
-    }
-    .login-sc {
-        box-shadow: none;
-        border-radius: 0;
-        background-color: rgb(170, 170, 170);
-    }
-    .logo-resp {
-        background-color: 0;
-        display: block!important;
-        background-color: rgba(0, 0, 0, .0)!important;
-    }
-    .login {
-        width: 100vw;
-    }
-    .mydivback {
-        height: auto;
-        width: auto;
-    }
-    .menu-lateral {
-        height: 100vh;
-        background-color: rgb(5, 31, 12);
-    }
-    .menu-lateral ul li a:hover {
-        background-color: #0000FF;
-        transition: 0.5s;
-    }
-    .menu-lateral.show-left {
-        -moz-transition: all 50ms linear;
-        -webkit-transition: all 50ms linear;
-        -o-transition: all 50ms linear;
-        transition: all 50ms linear;
-        -moz-transform: translate3d(-50vw, 0px, 0px);
-        -webkit-transform: translate3d(-50vw, 0px, 0px);
-        -o-transform: translate(-50vw, 0px);
-        -ms-transform: translate(-50vw, 0px);
-        transform: translate3d(-50vw, 0px, 0px);
-    }
-    .menu-lateral.show-left.click {
-        -moz-transform: translate3d(0px, 0px, 0px);
-        -webkit-transform: translate3d(0px, 0px, 0px);
-        -o-transform: translate(0px, 0px);
-        -ms-transform: translate(0px, 0px);
-        transform: translate3d(0px, 0px, 0px);
-        box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
-    }
-    .ham:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .ham {
-        display: block;
-        cursor: pointer;
-        transition: all 0.5s;
-        object-fit: cover;
-        border: 1px;
-        border-radius: 30px;
-        max-width: 100%;
-        height: 100%;
-        padding: 10px;
-        margin: 0;
-    }
-    .menu-exit {
-        display: block;
-        top: 0;
-        position: absolute;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-}
-
 .modulosQuimica {
     font-size: 12px;
     margin: 0px 16px;
@@ -452,4 +475,9 @@ header {
     z-index: 2;
     width: 100%;
     display: flex;
+}
+.rodape{
+    margin-top: 40px; 
+    width: 100%;
+  
 }
