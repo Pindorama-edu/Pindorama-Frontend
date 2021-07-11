@@ -1,0 +1,30 @@
+.bodyMaterias img {
+    max-width: 200px;
+    max-height: 200px;
+    float: right;
+}
+
+.perfilContent {
+    display: grid;
+}
+
+.perfilContent input {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 300px;
+    padding-top: 10px;
+    margin-top: 20px;    
+}
+
+.perfilContent #updatePerfil {
+    background-color: #afa5d9;
+    max-width: 150px;
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
