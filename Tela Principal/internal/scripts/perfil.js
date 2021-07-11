@@ -19,9 +19,10 @@ function loadPerfilData () {
     $.ajax({
         url: 'https://pindorama.site/api/v1/usuario/froste.lima@gmail.com',
         success: response => {
-            this.$perfilAniversario.val(new Date(response['birthDate']));
+            const date = new Date(response['birthDate']);
+            this.$perfilAniversario.val(`${date.getFullYear}-${date.getMonth}-${date.getDay}`);
             this.$perfilEmail.val(response['email']);
-            this.$welcomeText.text(`Bem vindo, ${response['username']}`)
+            this.$welcomeText.text(`Bem vindo, ${response['username']}`);
         },
         error: error => {
             console.log(error);
@@ -33,7 +34,7 @@ function updateUserData () {
     const data = {
         'email': this.$perfilEmail.text(),
         'senha': this.$perfilPassword.text(),
-        'birthdate': this.$perfilAniversario .text()
+        'birthdate': this.$perfilAniversario.text()
     }
 
     $.ajax({
