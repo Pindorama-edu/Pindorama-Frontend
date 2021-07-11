@@ -53,7 +53,7 @@ function updateUserData () {
         headers: {
             'content-type': 'application/json',
         },
-        data: JSON.parse(data),
+        data: JSON.stringify(data),
         success: response => {
             alert('Usuario alterado com sucesso');
         },
