@@ -19,7 +19,7 @@ function loadPerfilData () {
     $.ajax({
         url: 'https://pindorama.site/api/v1/usuario/froste.lima@gmail.com',
         success: response => {
-            this.$perfilAniversario.val(response['birthDate']);
+            this.$perfilAniversario.val(new Date(response['birthDate'] * 1000));
             this.$perfilEmail.val(response['username']);
             this.$welcomeText.val(`Bem vindo, ${response['username']}`)
         },
