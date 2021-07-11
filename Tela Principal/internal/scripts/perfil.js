@@ -42,9 +42,9 @@ function transformDate (number) {
 
 function updateUserData () {
     const data = {
-        'email': this.$perfilEmail.text(),
-        'senha': this.$perfilPassword.text(),
-        'birthdate': this.$perfilAniversario.text()
+        'email': this.$perfilEmail.val(),
+        'senha': this.$perfilPassword.val(),
+        'birthdate': this.$perfilAniversario.val()
     }
 
     $.ajax({
